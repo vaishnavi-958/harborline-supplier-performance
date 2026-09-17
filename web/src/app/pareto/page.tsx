@@ -18,11 +18,12 @@ export default function ParetoPage() {
       <div className="grid gap-4 xl:grid-cols-2">
         <Panel title={`5-Why · ${rca.supplier.supplier_name}`}>
           <p className="mb-3 text-[12px] text-muted-foreground">
-            Worst scorecard name, not a random pick.{" "}
+            Selected supplier for RCA based on lowest composite scorecard performance.{" "}
             <Link className="text-navy underline" href={`/suppliers/${rca.supplier.supplier_id}`}>
               Open supplier desk
             </Link>
           </p>
+          <p className="mb-3 text-[11px] text-muted-foreground">Analytical hypothesis: causes are inferred from supplier KPI patterns and should be validated with supplier, procurement, and operational evidence before corrective action.</p>
           <ol className="space-y-3">
             {rca.five_why.map((step) => (
               <li key={step.level}>
@@ -73,3 +74,5 @@ export default function ParetoPage() {
     </div>
   );
 }
+
+

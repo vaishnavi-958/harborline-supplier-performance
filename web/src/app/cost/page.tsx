@@ -20,7 +20,7 @@ export default function CostPage() {
       <p className="text-[12px] text-muted-foreground">Standard prices are simulated analytical inputs, not actual company procurement costs.</p>
       <div className="grid gap-4 xl:grid-cols-2">
         <Panel title="Monthly spend">
-          <TrendChart data={data.monthly.map((m) => ({ ...m, spend_idx: m.actual_spend / (data.monthly[0]?.actual_spend || 1) }))} x="year_month" y="cost_variance_pct" />
+          <TrendChart data={data.monthly} x="year_month" y="actual_spend" />
         </Panel>
         <Panel title="Spend by category">
           <SpendBars data={data.by_category.map((r) => ({ name: String(r.category), spend: Number(r.actual_spend) }))} x="name" y="spend" />
@@ -32,3 +32,4 @@ export default function CostPage() {
     </div>
   );
 }
+
