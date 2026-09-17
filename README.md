@@ -3,7 +3,12 @@
 > **End-to-end supplier performance analytics platform that transforms purchase-order data into delivery, quality, cost, risk, and procurement-action insights.**
 
 ### 🌐 Live Dashboard
+
 https://harborline-supplier-performance.vercel.app/
+
+### 💻 GitHub Repository
+
+https://github.com/vaishnavi-958/harborline-supplier-performance
 
 ---
 
