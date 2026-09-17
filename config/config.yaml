@@ -1,0 +1,36 @@
+# Independent Procurement Analytics Project — synthetic dataset configuration.
+# Nothing in this file represents a real company, supplier, or contract.
+
+project:
+  name: Harborline Supplier Performance
+  subtitle: OTIF, SLA, Quality, Lead-Time & Cost Variance Analytics
+  disclaimer: Independent Procurement Analytics Project using a synthetic procurement dataset.
+
+random_seed: 42
+
+generation:
+  num_suppliers: 36
+  num_po_lines: 22000
+  start_date: "2024-01-01"
+  end_date: "2025-12-31"
+  currency: USD
+  # Small, labeled defects injected into RAW files so the quality report is not empty.
+  raw_issue_rate: 0.004
+
+otif:
+  # OTIF = 1 when actual_delivery_date <= promised_delivery_date + delivery_tolerance_days
+  # AND received_quantity >= ordered_quantity * (1 - quantity_tolerance_pct)
+  delivery_tolerance_days: 0
+  quantity_tolerance_pct: 0.0
+
+sla:
+  watch_breach_rate: 0.08
+  breach_rate: 0.15
+
+paths:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  exports_dir: data/exports
+  sqlite_path: data/processed/harborline_procurement.db
+  dashboard_json: web/public/data/dashboard.json
+  quality_report: data/exports/data_quality_report.csv

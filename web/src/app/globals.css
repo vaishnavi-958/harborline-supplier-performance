@@ -1,0 +1,156 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: Arial, Helvetica, "Segoe UI", sans-serif;
+  --font-mono: Consolas, "Courier New", monospace;
+  --font-heading: Arial, Helvetica, "Segoe UI", sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-navy: var(--navy);
+  --color-copper: var(--copper);
+  --color-sea: var(--sea);
+  --color-rust: var(--rust);
+  --color-paper: var(--paper);
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+  --radius-4xl: 0px;
+}
+
+:root {
+  --paper: #ffffff;
+  --navy: #1f4e79;
+  --copper: #bf8f00;
+  --sea: #548235;
+  --rust: #c00000;
+  --background: #f3f3f3;
+  --foreground: #222222;
+  --card: #ffffff;
+  --card-foreground: #222222;
+  --popover: #ffffff;
+  --popover-foreground: #222222;
+  --primary: #1f4e79;
+  --primary-foreground: #ffffff;
+  --secondary: #eeeeee;
+  --secondary-foreground: #222222;
+  --muted: #f3f3f3;
+  --muted-foreground: #555555;
+  --accent: #deebf7;
+  --accent-foreground: #1f4e79;
+  --destructive: #c00000;
+  --border: #c8c8c8;
+  --input: #c8c8c8;
+  --ring: #1f4e79;
+  --chart-1: #1f4e79;
+  --chart-2: #c00000;
+  --chart-3: #548235;
+  --chart-4: #bf8f00;
+  --chart-5: #7f7f7f;
+  --radius: 0;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #222222;
+  --sidebar-primary: #1f4e79;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #deebf7;
+  --sidebar-accent-foreground: #1f4e79;
+  --sidebar-border: #c8c8c8;
+  --sidebar-ring: #1f4e79;
+}
+
+.dark {
+  --paper: #2b2b2b;
+  --background: #1e1e1e;
+  --foreground: #f0f0f0;
+  --card: #2b2b2b;
+  --card-foreground: #f0f0f0;
+  --popover: #2b2b2b;
+  --popover-foreground: #f0f0f0;
+  --primary: #5b9bd5;
+  --primary-foreground: #1e1e1e;
+  --secondary: #3a3a3a;
+  --secondary-foreground: #f0f0f0;
+  --muted: #333333;
+  --muted-foreground: #b0b0b0;
+  --accent: #3a4a5c;
+  --accent-foreground: #d6e3f0;
+  --destructive: #ff6b6b;
+  --border: #555555;
+  --input: #555555;
+  --ring: #5b9bd5;
+  --sidebar: #252525;
+  --sidebar-foreground: #f0f0f0;
+  --sidebar-primary: #5b9bd5;
+  --sidebar-primary-foreground: #1e1e1e;
+  --sidebar-accent: #3a4a5c;
+  --sidebar-accent-foreground: #d6e3f0;
+  --sidebar-border: #444444;
+  --sidebar-ring: #5b9bd5;
+  --navy: #5b9bd5;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-image: none;
+  }
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.hairline {
+  border: 1px solid var(--border);
+  box-shadow: none;
+}
+
+/* Next.js floating "N" badge — not part of Harborline */
+nextjs-portal,
+[data-next-badge],
+[data-next-badge-root],
+#__next-dev-overlay,
+#nextjs-dev-tools-menu {
+  display: none !important;
+}

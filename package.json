@@ -1,0 +1,11 @@
+{
+  "name": "harborline-supplier-performance",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix web run dev -- --port 43147 --hostname 0.0.0.0",
+    "build": "npm --prefix web run build",
+    "start": "npm --prefix web run start -- --port 43147 --hostname 0.0.0.0",
+    "pipeline": "PYTHONPATH=. python3 scripts/run_pipeline.py",
+    "test": "PYTHONPATH=. python3 -m pytest tests -q"
+  }
+}

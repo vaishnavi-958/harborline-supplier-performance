@@ -1,0 +1,631 @@
+# Synthetic supplier behavioral parameters.
+# Names, regions, and contacts are fabricated. No real companies.
+
+disclaimer: Independent Procurement Analytics Project using a synthetic procurement dataset.
+
+archetypes:
+  excellent: "High OTIF, low defects, stable cost, tight lead-time."
+  late_delivery: "Chronic lateness with otherwise moderate quality."
+  quality_risk: "Acceptable delivery, elevated defect rate."
+  cost_drift: "Strong quality, unfavorable unit-price variance."
+  seasonal: "Q4 / winter delay spike; rest of year nearer target."
+  short_fill: "Capacity pressure — short receipts, decent dates."
+  mixed_improving: "Poor start of 2024, recovering through 2025."
+  mixed_worsening: "Solid 2024, deteriorating OTIF and quality in 2025."
+
+suppliers:
+  - supplier_id: SUP-1001
+    supplier_name: Northridge Precision Components
+    archetype: excellent
+    region: Midwest
+    category: Mechanical Components
+    base_otif_rate: 0.97
+    base_defect_rate: 0.004
+    base_lead_time: 18
+    lead_time_variability: 1.4
+    cost_variance_rate: 0.008
+    capacity_factor: 1.00
+    fill_rate_base: 0.995
+    sla_days: 21
+    payment_terms: Net 45
+    importance: 0.95
+    trend: stable
+
+  - supplier_id: SUP-1002
+    supplier_name: Redwood Fastener Works
+    archetype: excellent
+    region: West
+    category: Fasteners
+    base_otif_rate: 0.96
+    base_defect_rate: 0.006
+    base_lead_time: 12
+    lead_time_variability: 1.2
+    cost_variance_rate: 0.010
+    capacity_factor: 1.00
+    fill_rate_base: 0.992
+    sla_days: 14
+    payment_terms: Net 30
+    importance: 0.88
+    trend: stable
+
+  - supplier_id: SUP-1003
+    supplier_name: Helms Castings
+    archetype: excellent
+    region: Northeast
+    category: Metals
+    base_otif_rate: 0.94
+    base_defect_rate: 0.007
+    base_lead_time: 28
+    lead_time_variability: 2.0
+    cost_variance_rate: 0.012
+    capacity_factor: 0.99
+    fill_rate_base: 0.988
+    sla_days: 32
+    payment_terms: Net 45
+    importance: 0.91
+    trend: improving
+
+  - supplier_id: SUP-1004
+    supplier_name: Driftline Metals
+    archetype: late_delivery
+    region: South
+    category: Metals
+    base_otif_rate: 0.71
+    base_defect_rate: 0.018
+    base_lead_time: 24
+    lead_time_variability: 6.5
+    cost_variance_rate: 0.022
+    capacity_factor: 0.92
+    fill_rate_base: 0.955
+    sla_days: 26
+    payment_terms: Net 30
+    importance: 0.72
+    trend: worsening
+
+  - supplier_id: SUP-1005
+    supplier_name: Ashford Polymer Group
+    archetype: quality_risk
+    region: Midwest
+    category: Plastics
+    base_otif_rate: 0.91
+    base_defect_rate: 0.062
+    base_lead_time: 16
+    lead_time_variability: 2.2
+    cost_variance_rate: 0.015
+    capacity_factor: 0.97
+    fill_rate_base: 0.980
+    sla_days: 18
+    payment_terms: Net 30
+    importance: 0.64
+    trend: stable
+
+  - supplier_id: SUP-1006
+    supplier_name: Copperline Extrusions
+    archetype: cost_drift
+    region: West
+    category: Metals
+    base_otif_rate: 0.93
+    base_defect_rate: 0.008
+    base_lead_time: 21
+    lead_time_variability: 2.4
+    cost_variance_rate: 0.095
+    capacity_factor: 0.98
+    fill_rate_base: 0.984
+    sla_days: 24
+    payment_terms: Net 60
+    importance: 0.70
+    trend: stable
+
+  - supplier_id: SUP-1007
+    supplier_name: Solstice Packaging Co.
+    archetype: seasonal
+    region: South
+    category: Packaging
+    base_otif_rate: 0.88
+    base_defect_rate: 0.014
+    base_lead_time: 10
+    lead_time_variability: 3.8
+    cost_variance_rate: 0.028
+    capacity_factor: 0.90
+    fill_rate_base: 0.962
+    sla_days: 12
+    payment_terms: Net 30
+    importance: 0.68
+    seasonal_delay_months: [10, 11, 12]
+    trend: stable
+
+  - supplier_id: SUP-1008
+    supplier_name: Kestrel Electronics
+    archetype: short_fill
+    region: West
+    category: Electronics
+    base_otif_rate: 0.84
+    base_defect_rate: 0.012
+    base_lead_time: 35
+    lead_time_variability: 4.0
+    cost_variance_rate: 0.035
+    capacity_factor: 0.78
+    fill_rate_base: 0.905
+    sla_days: 38
+    payment_terms: Net 45
+    importance: 0.81
+    trend: worsening
+
+  - supplier_id: SUP-1009
+    supplier_name: Marrow & Pine Filters
+    archetype: mixed_improving
+    region: Northeast
+    category: MRO
+    base_otif_rate: 0.78
+    base_defect_rate: 0.028
+    base_lead_time: 14
+    lead_time_variability: 3.2
+    cost_variance_rate: 0.020
+    capacity_factor: 0.94
+    fill_rate_base: 0.970
+    sla_days: 16
+    payment_terms: Net 30
+    importance: 0.55
+    trend: improving
+
+  - supplier_id: SUP-1010
+    supplier_name: Ironbark Bearings
+    archetype: mixed_worsening
+    region: Midwest
+    category: Mechanical Components
+    base_otif_rate: 0.89
+    base_defect_rate: 0.016
+    base_lead_time: 22
+    lead_time_variability: 3.6
+    cost_variance_rate: 0.018
+    capacity_factor: 0.93
+    fill_rate_base: 0.968
+    sla_days: 24
+    payment_terms: Net 45
+    importance: 0.77
+    trend: worsening
+
+  - supplier_id: SUP-1011
+    supplier_name: Lumen Circuit Assemblies
+    archetype: excellent
+    region: South
+    category: Electronics
+    base_otif_rate: 0.95
+    base_defect_rate: 0.005
+    base_lead_time: 30
+    lead_time_variability: 1.8
+    cost_variance_rate: 0.011
+    capacity_factor: 0.99
+    fill_rate_base: 0.990
+    sla_days: 34
+    payment_terms: Net 45
+    importance: 0.86
+    trend: stable
+
+  - supplier_id: SUP-1012
+    supplier_name: Greyhaven Seals
+    archetype: late_delivery
+    region: Northeast
+    category: Mechanical Components
+    base_otif_rate: 0.68
+    base_defect_rate: 0.021
+    base_lead_time: 19
+    lead_time_variability: 7.2
+    cost_variance_rate: 0.026
+    capacity_factor: 0.88
+    fill_rate_base: 0.948
+    sla_days: 21
+    payment_terms: Net 30
+    importance: 0.60
+    trend: stable
+
+  - supplier_id: SUP-1013
+    supplier_name: Bramble Adhesives
+    archetype: quality_risk
+    region: South
+    category: Chemicals
+    base_otif_rate: 0.90
+    base_defect_rate: 0.071
+    base_lead_time: 11
+    lead_time_variability: 1.9
+    cost_variance_rate: 0.019
+    capacity_factor: 0.96
+    fill_rate_base: 0.978
+    sla_days: 13
+    payment_terms: Net 30
+    importance: 0.48
+    trend: worsening
+
+  - supplier_id: SUP-1014
+    supplier_name: Palisade Corrugated
+    archetype: seasonal
+    region: Midwest
+    category: Packaging
+    base_otif_rate: 0.86
+    base_defect_rate: 0.011
+    base_lead_time: 8
+    lead_time_variability: 2.8
+    cost_variance_rate: 0.031
+    capacity_factor: 0.89
+    fill_rate_base: 0.958
+    sla_days: 10
+    payment_terms: Net 15
+    importance: 0.58
+    seasonal_delay_months: [10, 11, 12, 1]
+    trend: stable
+
+  - supplier_id: SUP-1015
+    supplier_name: Quay Street Chemicals
+    archetype: cost_drift
+    region: Northeast
+    category: Chemicals
+    base_otif_rate: 0.92
+    base_defect_rate: 0.009
+    base_lead_time: 17
+    lead_time_variability: 2.1
+    cost_variance_rate: 0.112
+    capacity_factor: 0.97
+    fill_rate_base: 0.982
+    sla_days: 20
+    payment_terms: Net 60
+    importance: 0.66
+    trend: stable
+
+  - supplier_id: SUP-1016
+    supplier_name: Windrow Safety Gear
+    archetype: short_fill
+    region: West
+    category: MRO
+    base_otif_rate: 0.82
+    base_defect_rate: 0.015
+    base_lead_time: 13
+    lead_time_variability: 3.0
+    cost_variance_rate: 0.024
+    capacity_factor: 0.81
+    fill_rate_base: 0.918
+    sla_days: 16
+    payment_terms: Net 30
+    importance: 0.44
+    trend: stable
+
+  - supplier_id: SUP-1017
+    supplier_name: Sable Wire & Cable
+    archetype: mixed_improving
+    region: South
+    category: Electrical
+    base_otif_rate: 0.80
+    base_defect_rate: 0.022
+    base_lead_time: 20
+    lead_time_variability: 4.1
+    cost_variance_rate: 0.027
+    capacity_factor: 0.92
+    fill_rate_base: 0.960
+    sla_days: 22
+    payment_terms: Net 45
+    importance: 0.62
+    trend: improving
+
+  - supplier_id: SUP-1018
+    supplier_name: Tannery Belt Systems
+    archetype: mixed_worsening
+    region: Midwest
+    category: Mechanical Components
+    base_otif_rate: 0.87
+    base_defect_rate: 0.019
+    base_lead_time: 26
+    lead_time_variability: 4.4
+    cost_variance_rate: 0.033
+    capacity_factor: 0.90
+    fill_rate_base: 0.952
+    sla_days: 28
+    payment_terms: Net 45
+    importance: 0.59
+    trend: worsening
+
+  - supplier_id: SUP-1019
+    supplier_name: Oakmere Valves
+    archetype: excellent
+    region: Northeast
+    category: Fluid Handling
+    base_otif_rate: 0.96
+    base_defect_rate: 0.005
+    base_lead_time: 32
+    lead_time_variability: 1.6
+    cost_variance_rate: 0.009
+    capacity_factor: 1.00
+    fill_rate_base: 0.993
+    sla_days: 36
+    payment_terms: Net 45
+    importance: 0.84
+    trend: stable
+
+  - supplier_id: SUP-1020
+    supplier_name: Cinder Road Abrasives
+    archetype: late_delivery
+    region: West
+    category: MRO
+    base_otif_rate: 0.66
+    base_defect_rate: 0.024
+    base_lead_time: 15
+    lead_time_variability: 8.0
+    cost_variance_rate: 0.029
+    capacity_factor: 0.86
+    fill_rate_base: 0.940
+    sla_days: 17
+    payment_terms: Net 30
+    importance: 0.41
+    trend: worsening
+
+  - supplier_id: SUP-1021
+    supplier_name: Hearthline Insulation
+    archetype: quality_risk
+    region: Midwest
+    category: Building Materials
+    base_otif_rate: 0.89
+    base_defect_rate: 0.055
+    base_lead_time: 18
+    lead_time_variability: 2.6
+    cost_variance_rate: 0.017
+    capacity_factor: 0.95
+    fill_rate_base: 0.974
+    sla_days: 21
+    payment_terms: Net 30
+    importance: 0.47
+    trend: stable
+
+  - supplier_id: SUP-1022
+    supplier_name: Faircurrent Pumps
+    archetype: cost_drift
+    region: South
+    category: Fluid Handling
+    base_otif_rate: 0.91
+    base_defect_rate: 0.010
+    base_lead_time: 34
+    lead_time_variability: 2.8
+    cost_variance_rate: 0.088
+    capacity_factor: 0.96
+    fill_rate_base: 0.979
+    sla_days: 38
+    payment_terms: Net 60
+    importance: 0.73
+    trend: stable
+
+  - supplier_id: SUP-1023
+    supplier_name: Snowfield Labels
+    archetype: seasonal
+    region: Northeast
+    category: Packaging
+    base_otif_rate: 0.87
+    base_defect_rate: 0.013
+    base_lead_time: 9
+    lead_time_variability: 3.4
+    cost_variance_rate: 0.021
+    capacity_factor: 0.91
+    fill_rate_base: 0.964
+    sla_days: 11
+    payment_terms: Net 15
+    importance: 0.36
+    seasonal_delay_months: [9, 10, 11]
+    trend: stable
+
+  - supplier_id: SUP-1024
+    supplier_name: Nettle Hose Assemblies
+    archetype: short_fill
+    region: Midwest
+    category: Fluid Handling
+    base_otif_rate: 0.83
+    base_defect_rate: 0.017
+    base_lead_time: 16
+    lead_time_variability: 3.5
+    cost_variance_rate: 0.023
+    capacity_factor: 0.80
+    fill_rate_base: 0.912
+    sla_days: 18
+    payment_terms: Net 30
+    importance: 0.52
+    trend: stable
+
+  - supplier_id: SUP-1025
+    supplier_name: Brightwater Sensors
+    archetype: mixed_improving
+    region: West
+    category: Electronics
+    base_otif_rate: 0.81
+    base_defect_rate: 0.020
+    base_lead_time: 27
+    lead_time_variability: 3.9
+    cost_variance_rate: 0.016
+    capacity_factor: 0.93
+    fill_rate_base: 0.966
+    sla_days: 30
+    payment_terms: Net 45
+    importance: 0.69
+    trend: improving
+
+  - supplier_id: SUP-1026
+    supplier_name: Rookery Lighting
+    archetype: mixed_worsening
+    region: South
+    category: Electrical
+    base_otif_rate: 0.88
+    base_defect_rate: 0.014
+    base_lead_time: 23
+    lead_time_variability: 4.8
+    cost_variance_rate: 0.038
+    capacity_factor: 0.91
+    fill_rate_base: 0.954
+    sla_days: 26
+    payment_terms: Net 45
+    importance: 0.57
+    trend: worsening
+
+  - supplier_id: SUP-1027
+    supplier_name: Stonekiln Refractories
+    archetype: excellent
+    region: South
+    category: Building Materials
+    base_otif_rate: 0.94
+    base_defect_rate: 0.006
+    base_lead_time: 40
+    lead_time_variability: 2.2
+    cost_variance_rate: 0.013
+    capacity_factor: 0.98
+    fill_rate_base: 0.986
+    sla_days: 45
+    payment_terms: Net 60
+    importance: 0.75
+    trend: stable
+
+  - supplier_id: SUP-1028
+    supplier_name: Pinion Gears Ltd.
+    archetype: late_delivery
+    region: Midwest
+    category: Mechanical Components
+    base_otif_rate: 0.73
+    base_defect_rate: 0.016
+    base_lead_time: 29
+    lead_time_variability: 6.8
+    cost_variance_rate: 0.025
+    capacity_factor: 0.89
+    fill_rate_base: 0.950
+    sla_days: 32
+    payment_terms: Net 45
+    importance: 0.63
+    trend: stable
+
+  - supplier_id: SUP-1029
+    supplier_name: Fernhollow Coatings
+    archetype: quality_risk
+    region: West
+    category: Chemicals
+    base_otif_rate: 0.90
+    base_defect_rate: 0.068
+    base_lead_time: 14
+    lead_time_variability: 2.0
+    cost_variance_rate: 0.018
+    capacity_factor: 0.96
+    fill_rate_base: 0.976
+    sla_days: 16
+    payment_terms: Net 30
+    importance: 0.49
+    trend: worsening
+
+  - supplier_id: SUP-1030
+    supplier_name: Lowcountry Corrugators
+    archetype: seasonal
+    region: South
+    category: Packaging
+    base_otif_rate: 0.85
+    base_defect_rate: 0.012
+    base_lead_time: 7
+    lead_time_variability: 3.1
+    cost_variance_rate: 0.027
+    capacity_factor: 0.88
+    fill_rate_base: 0.956
+    sla_days: 9
+    payment_terms: Net 15
+    importance: 0.40
+    seasonal_delay_months: [10, 11, 12]
+    trend: stable
+
+  - supplier_id: SUP-1031
+    supplier_name: Atlas Thread & Tape
+    archetype: cost_drift
+    region: Northeast
+    category: MRO
+    base_otif_rate: 0.92
+    base_defect_rate: 0.008
+    base_lead_time: 10
+    lead_time_variability: 1.7
+    cost_variance_rate: 0.102
+    capacity_factor: 0.98
+    fill_rate_base: 0.985
+    sla_days: 12
+    payment_terms: Net 30
+    importance: 0.33
+    trend: stable
+
+  - supplier_id: SUP-1032
+    supplier_name: Westridge Relays
+    archetype: short_fill
+    region: West
+    category: Electrical
+    base_otif_rate: 0.80
+    base_defect_rate: 0.013
+    base_lead_time: 25
+    lead_time_variability: 3.7
+    cost_variance_rate: 0.030
+    capacity_factor: 0.77
+    fill_rate_base: 0.898
+    sla_days: 28
+    payment_terms: Net 45
+    importance: 0.54
+    trend: worsening
+
+  - supplier_id: SUP-1033
+    supplier_name: Millpond Lubricants
+    archetype: mixed_improving
+    region: Midwest
+    category: Chemicals
+    base_otif_rate: 0.79
+    base_defect_rate: 0.025
+    base_lead_time: 12
+    lead_time_variability: 2.9
+    cost_variance_rate: 0.022
+    capacity_factor: 0.94
+    fill_rate_base: 0.968
+    sla_days: 14
+    payment_terms: Net 30
+    importance: 0.46
+    trend: improving
+
+  - supplier_id: SUP-1034
+    supplier_name: Crowfield Motors
+    archetype: mixed_worsening
+    region: Northeast
+    category: Mechanical Components
+    base_otif_rate: 0.86
+    base_defect_rate: 0.018
+    base_lead_time: 33
+    lead_time_variability: 5.1
+    cost_variance_rate: 0.034
+    capacity_factor: 0.90
+    fill_rate_base: 0.949
+    sla_days: 36
+    payment_terms: Net 60
+    importance: 0.71
+    trend: worsening
+
+  - supplier_id: SUP-1035
+    supplier_name: Harborline Spare Parts (internal demo vendor)
+    archetype: late_delivery
+    region: South
+    category: MRO
+    base_otif_rate: 0.62
+    base_defect_rate: 0.031
+    base_lead_time: 11
+    lead_time_variability: 9.0
+    cost_variance_rate: 0.041
+    capacity_factor: 0.84
+    fill_rate_base: 0.928
+    sla_days: 13
+    payment_terms: Net 15
+    importance: 0.28
+    trend: worsening
+
+  - supplier_id: SUP-1036
+    supplier_name: Bluekiln Ceramics
+    archetype: excellent
+    region: West
+    category: Building Materials
+    base_otif_rate: 0.95
+    base_defect_rate: 0.006
+    base_lead_time: 36
+    lead_time_variability: 1.9
+    cost_variance_rate: 0.014
+    capacity_factor: 0.99
+    fill_rate_base: 0.989
+    sla_days: 40
+    payment_terms: Net 45
+    importance: 0.61
+    trend: stable
